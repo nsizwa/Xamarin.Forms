@@ -32,18 +32,20 @@ namespace Xamarin.Forms.Controls.Issues
 				AutomationId = GridLabelId,
 				Text = "This is a Grid with a TapGesture",
 				FontSize = 24,
-				BackgroundColor = Color.Green
+				BackgroundColor = Color.Green,
+				InputTransparent = true
 			};
 			Grid.SetRow(testGrid, 1);
 			testGrid.Children.Add(gridLabel);
 
-			var testStack = new StackLayout { BackgroundColor = Color.Default, AutomationId = "teststack"};
+			var testStack = new StackLayout { BackgroundColor = Color.Default, AutomationId = "teststack" };
 			var stackLabel = new Label
 			{
 				AutomationId = StackLabelId,
 				Text = "This StackLayout also has a TapGesture",
 				FontSize = 24,
-				BackgroundColor = Color.Green
+				BackgroundColor = Color.Green,
+				InputTransparent = true
 			};
 			Grid.SetRow(testStack, 2);
 			testStack.Children.Add(stackLabel);

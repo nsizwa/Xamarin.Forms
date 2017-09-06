@@ -30,10 +30,11 @@ namespace Xamarin.Forms.Controls.Issues
             tapGestureRecognizer.Tapped += (sender, e) =>
             {
                 _taps = _taps + 1;
-                if (_taps == 2)
-                {
-                    _result.Text = Success;
-                }
+				if (_taps == 2)
+				{
+					_result.Text = Success;
+				}
+				else _result.Text = _taps.ToString();
             };
             layout.GestureRecognizers.Add(tapGestureRecognizer);
 
@@ -51,6 +52,7 @@ namespace Xamarin.Forms.Controls.Issues
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.Fill,
                 BackgroundColor = Color.AntiqueWhite,
+				InputTransparent = true,
                 Children =
                 {
                     new Label
@@ -58,7 +60,8 @@ namespace Xamarin.Forms.Controls.Issues
                         Text = "inner label",
                         FontSize = 20,
                         HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.CenterAndExpand
+                        VerticalOptions = LayoutOptions.CenterAndExpand,
+						InputTransparent = true
                     }
                 }
             };
@@ -76,7 +79,8 @@ namespace Xamarin.Forms.Controls.Issues
                     {
                         Text = "outer label",
                         FontSize = 20,
-                        HorizontalOptions = LayoutOptions.Center,
+						HorizontalOptions = LayoutOptions.Center,
+						InputTransparent = true
                     }
                 }
             };
